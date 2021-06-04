@@ -12,7 +12,10 @@ const useMoneda = (label, stateInicial, opciones) => {
             <Fragment>
                 {/* Con este Fragment lo que quiero hacer es retornar el select y el label */}
                 <label>{label}</label>
-                <select>
+                <select
+                    onChange={ e => actualizarState(e.target.value)}
+                    value={state}
+                >
                     <option value="">-- Seleccione su moneda --</option>
                     {opciones.map(opcion => (
                         <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
