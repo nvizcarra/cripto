@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+// Luego de crear el hook en useMoneda, lo importo acá
+import useMoneda from '../hooks/useMoneda';
 
 const Boton = styled.input`
     margin-top: 20px;
@@ -20,9 +22,17 @@ const Boton = styled.input`
 `;
 
 const Formulario = () => {
+
+    // Utilizar useMoneda
+    // SelectMonedas equivale a select, el parámetro del state useMoneda. Lo puedo poner el nombre que yo necesite, no tiene que ser obligatoriamente igual
+    // Es Array destructuring y estamos estipulando el orden en el que se retornan
+    const [moneda, SelectMonedas, actualizarState] = useMoneda();
+
     return (
 
         <form>
+            {/* Utilizo SelectMonedas como componente */}
+            <SelectMonedas/>
             
             <Boton
                 type="submit"
