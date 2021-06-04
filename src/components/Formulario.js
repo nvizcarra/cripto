@@ -23,10 +23,20 @@ const Boton = styled.input`
 
 const Formulario = () => {
 
+    const MONEDAS = [
+        {codigo: 'ARS', nombre: 'Peso Argentino'},
+        {codigo: 'USD', nombre: 'Dólar USA'},
+        {codigo: 'MXN', nombre: 'Peso Mexicano'},
+        {codigo: 'EUR', nombre: 'Euro'},
+        {codigo: 'GBP', nombre: 'Libra Esterlina'},
+        {codigo: 'COP', nombre: 'Peso Colombiano'}
+        // Una vez creado nuestro arreglo de monedas, se lo podemos pasar a nuestro custom hook
+    ]
+
     // Utilizar useMoneda
     // SelectMonedas equivale a select, el parámetro del state useMoneda. Lo puedo poner el nombre que yo necesite, no tiene que ser obligatoriamente igual
     // Es Array destructuring y estamos estipulando el orden en el que se retornan
-    const [moneda, SelectMonedas, actualizarState] = useMoneda();
+    const [moneda, SelectMonedas, actualizarState] = useMoneda('Elige tu moneda', '', MONEDAS);
 
     return (
 
