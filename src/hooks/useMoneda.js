@@ -20,7 +20,7 @@ const Select = styled.select`
     -webkit-appearance:none;
     border-radius: 10px;
     border:none;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 `;
 
 // Este código es el state y las operaciones que podamos realizar
@@ -33,7 +33,7 @@ const useMoneda = (label, stateInicial, opciones) => {
             <Fragment>
                 {/* Con este Fragment lo que quiero hacer es retornar el select y el label */}
                 <Label>{label}</Label>
-                <select
+                <Select
                     onChange={ e => actualizarState(e.target.value)}
                     value={state}
                 >
@@ -41,7 +41,7 @@ const useMoneda = (label, stateInicial, opciones) => {
                     {opciones.map(opcion => (
                         <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre}</option>
                     ))}
-                </select>
+                </Select>
             </Fragment>
         );
 
