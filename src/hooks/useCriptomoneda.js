@@ -25,6 +25,8 @@ const Select = styled.select`
 
 // Este archivo js es copia de useMoneda.js. La diferencia es que las opciones las vamos a traer desde una API
 const useCriptomoneda = (label, stateInicial, opciones) => {
+
+    console.log(opciones);
     // State para el custom hook
     const [state, actualizarState] = useState('');
 

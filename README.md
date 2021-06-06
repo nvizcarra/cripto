@@ -2,9 +2,11 @@
 
 This project uses the following technologies:
 
-HTML
-CSS
-React
+* HTML
+* CSS
+* JavaScript
+* React
+* Hooks
 
 Dependencies:
 * @emotion/core
